@@ -1,0 +1,27 @@
+import random 
+
+print("\n--RANDOM NUMBER GAME--")
+print("Guess a random number between 1 and 50 \nYou only have 5 Attempts")
+print("-good luck-")
+
+random_num = random.randint(1,50)
+chance = 5
+while chance >= 1:
+    print ("\nAttempts Left = ", chance)
+    guess = int(input("enter your number "))
+    if guess == random_num:
+        print ("You've WON")
+        break
+
+    elif guess < random_num:
+            print ("too small")
+            chance -=1
+    elif guess > random_num:
+            print ("too big")
+            chance -=1
+
+if chance == 0:
+    print("\nYou've Lost")
+    print("The Answer is", random_num)
+
+    
